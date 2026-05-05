@@ -160,7 +160,7 @@ export default function Reviews({ courseId }: ReviewsProps) {
   if (loading) {
     return (
       <div className="flex justify-center py-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#FF69B4] border-t-transparent"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#00FFE2] border-t-transparent"></div>
       </div>
     );
   }
@@ -174,7 +174,7 @@ export default function Reviews({ courseId }: ReviewsProps) {
         </h2>
         <button
           onClick={() => setShowReviewForm(!showReviewForm)}
-          className="px-4 py-2 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300"
+          className="px-4 py-2 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300"
         >
           {myReview ? 'Editar Reseña' : 'Escribir Reseña'}
         </button>
@@ -202,7 +202,7 @@ export default function Reviews({ courseId }: ReviewsProps) {
               <textarea
                 value={reviewText}
                 onChange={(e) => setReviewText(e.target.value)}
-                className="w-full p-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#FF69B4] focus:border-transparent"
+                className="w-full p-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#00FFE2] focus:border-transparent"
                 rows={4}
                 placeholder="Comparte tu experiencia con este curso..."
               />
@@ -212,7 +212,7 @@ export default function Reviews({ courseId }: ReviewsProps) {
               <button
                 onClick={submitReview}
                 disabled={submitting}
-                className="px-6 py-2 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50"
+                className="px-6 py-2 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50"
               >
                 {submitting ? 'Guardando...' : (myReview ? 'Actualizar' : 'Publicar')}
               </button>
@@ -229,12 +229,12 @@ export default function Reviews({ courseId }: ReviewsProps) {
 
       {/* My Review */}
       {myReview && !showReviewForm && (
-        <div className="bg-gradient-to-r from-[#FF69B4]/10 to-[#C33B80]/10 rounded-lg p-6 border border-[#FF69B4]/20">
+        <div className="bg-gradient-to-r from-[#00FFE2]/10 to-[#A848F0]/10 rounded-lg p-6 border border-[#00FFE2]/20">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-lg font-semibold text-neutral-900">Tu reseña</h3>
             <button
               onClick={() => setShowReviewForm(true)}
-              className="text-sm text-[#C33B80] hover:underline"
+              className="text-sm text-[#A848F0] hover:underline"
             >
               Editar
             </button>
@@ -256,7 +256,7 @@ export default function Reviews({ courseId }: ReviewsProps) {
             <div key={review.id} className="bg-white rounded-lg border border-neutral-200 p-6">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#FF69B4] to-[#C33B80] flex items-center justify-center text-white font-bold">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#00FFE2] to-[#A848F0] flex items-center justify-center text-white font-bold">
                     {review.user_name.charAt(0).toUpperCase()}
                   </div>
                   <div>

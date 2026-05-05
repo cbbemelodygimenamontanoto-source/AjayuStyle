@@ -227,7 +227,7 @@ export default function ReviewsPage() {
     return (
       <Layout>
         <div className="flex items-center justify-center min-h-screen">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF69B4]"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#00FFE2]"></div>
         </div>
       </Layout>
     );
@@ -391,7 +391,7 @@ export default function ReviewsPage() {
                       value={reviewForm.comment}
                       onChange={(e) => setReviewForm(prev => ({ ...prev, comment: e.target.value }))}
                       rows={4}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF69B4] focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00FFE2] focus:border-transparent"
                       placeholder="Comparte tu experiencia con este curso..."
                       required
                     />
@@ -400,7 +400,7 @@ export default function ReviewsPage() {
                   <Button
                     type="submit"
                     disabled={submitting}
-                    className="w-full bg-[#FF69B4] hover:bg-[#FF69B4] text-black"
+                    className="w-full bg-[#00FFE2] hover:bg-[#00E6CC] text-black"
                   >
                     {submitting ? 'Enviando...' : userReview ? 'Actualizar Reseña' : 'Enviar Reseña'}
                   </Button>

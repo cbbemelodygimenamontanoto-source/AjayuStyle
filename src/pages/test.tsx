@@ -69,7 +69,7 @@ export default function Test() {
       padding: '50px', 
       textAlign: 'center',
       fontFamily: 'Arial, sans-serif',
-      background: 'linear-gradient(135deg, #FF69B4 0%, #C33B80 100%)',
+      background: 'linear-gradient(135deg, #00FFE2 0%, #A848F0 100%)',
       minHeight: '100vh',
       color: 'white'
     }}>

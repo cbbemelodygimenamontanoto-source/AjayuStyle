@@ -46,7 +46,7 @@ function Header() {
     { name: 'Cursos', href: '/cursos', module: 'cursos' },
     { name: 'IA', href: '/ia', module: 'ia' },
     { name: 'Avatares', href: '/avatares', module: 'avatares' },
-    { name: 'Red Social', href: '/social', module: 'social', optional: true },
+    { name: 'Comunidad', href: '/comunidad/feed', module: 'comunidad' },
   ];
 
   const handleLogout = () => {
@@ -107,7 +107,7 @@ function Header() {
                   )}
                 </span>
                 <div className={cn(
-                  'absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#FF69B4] to-[#89004F] transition-all duration-300',
+                  'absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-pink-400 to-pink-600 transition-all duration-300',
                   router.pathname.startsWith(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 )} />
               </Link>
@@ -122,7 +122,7 @@ function Header() {
                   onClick={() => setUserMenuOpen(!userMenuOpen)}
                   className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-neutral-100 transition-all duration-300"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-br from-[#FF69B4] to-[#89004F] rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-medium text-sm">
                       {user.name?.charAt(0).toUpperCase() || 'U'}
                     </span>
@@ -215,7 +215,7 @@ function Header() {
                 </Link>
                 <Link
                   href="/register"
-                  className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF69B4] to-[#C33B80] hover:from-[#FF69B4] hover:to-[#89004F] rounded-lg transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#00FFE2] to-[#A848F0] hover:from-[#00E6CC] hover:to-[#9339D9] rounded-lg transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   Registrarse
                 </Link>
@@ -228,7 +228,7 @@ function Header() {
             {user ? (
               <button
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
-                className="w-8 h-8 bg-gradient-to-br from-[#FF69B4] to-[#89004F] rounded-full flex items-center justify-center"
+                className="w-8 h-8 bg-gradient-to-br from-[#00FFE2] to-[#5C00CC] rounded-full flex items-center justify-center"
               >
                 <span className="text-white font-medium text-sm">
                   {user.name?.charAt(0).toUpperCase() || 'U'}
@@ -244,7 +244,7 @@ function Header() {
                 </Link>
                 <Link
                   href="/register"
-                  className="px-3 py-1.5 text-xs font-medium text-white bg-gradient-to-r from-[#FF69B4] to-[#C33B80] hover:from-[#FF69B4] hover:to-[#89004F] rounded-lg transition-all duration-300"
+                  className="px-3 py-1.5 text-xs font-medium text-white bg-gradient-to-r from-[#00FFE2] to-[#A848F0] hover:from-[#00E6CC] hover:to-[#9339D9] rounded-lg transition-all duration-300"
                 >
                   Registrar
                 </Link>
@@ -295,7 +295,7 @@ function Header() {
               {user && (
                 <div className="pt-4 border-t border-neutral-200">
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#FF69B4] to-[#89004F] rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#00FFE2] to-[#5C00CC] rounded-full flex items-center justify-center">
                       <span className="text-white font-medium">
                         {user.name?.charAt(0).toUpperCase() || 'U'}
                       </span>
@@ -395,7 +395,7 @@ function Footer() {
           {/* Logo y descripción */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#FF69B4] to-[#89004F] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#00FFE2] to-[#5C00CC] rounded-lg flex items-center justify-center">
                 <span className="text-neutral-0 font-bold text-lg">A</span>
               </div>
               <span className="text-xl font-serif font-bold text-neutral-0">

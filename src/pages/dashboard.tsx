@@ -214,7 +214,7 @@ export default function Dashboard() {
             <p className="text-neutral-600 mb-6">Debes iniciar sesión para acceder a tu dashboard</p>
             <button 
               onClick={() => window.location.href = '/login'}
-              className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white font-semibold py-3 px-6 rounded-lg hover:scale-105 transition-transform duration-300"
+              className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white font-semibold py-3 px-6 rounded-lg hover:scale-105 transition-transform duration-300"
             >
               Iniciar Sesión
             </button>
@@ -248,10 +248,10 @@ export default function Dashboard() {
                 
                 <div className="flex items-center space-x-4">
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-[#FF69B4]">{stats.currentStreak}</div>
+                    <div className="text-2xl font-bold text-[#00FFE2]">{stats.currentStreak}</div>
                     <div className="text-sm text-neutral-600">días consecutivos</div>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF69B4] to-[#C33B80] flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00FFE2] to-[#A848F0] flex items-center justify-center text-white font-bold text-lg">
                     {user.name.charAt(0)}
                   </div>
                 </div>
@@ -375,7 +375,7 @@ export default function Dashboard() {
                   <h2 className="text-2xl font-bold text-neutral-900">Mis Cursos Creados</h2>
                   <button 
                     onClick={() => window.location.href = '/courses/create'}
-                    className="text-[#C33B80] hover:underline font-medium flex items-center"
+                    className="text-[#A848F0] hover:underline font-medium flex items-center"
                   >
                     <Plus className="w-4 h-4 mr-1" />
                     Crear Nuevo Curso
@@ -490,7 +490,7 @@ export default function Dashboard() {
                       <p className="text-sm text-neutral-600">Cursos Inscritos</p>
                       <p className="text-3xl font-bold text-neutral-900">{stats.totalCourses}</p>
                     </div>
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] rounded-full flex items-center justify-center">
                       <BookOpen className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -559,7 +559,7 @@ export default function Dashboard() {
                 <h2 className="text-2xl font-bold text-neutral-900">Mis Cursos</h2>
                 <button 
                   onClick={() => window.location.href = '/cursos'}
-                  className="text-[#C33B80] hover:underline font-medium"
+                  className="text-[#A848F0] hover:underline font-medium"
                 >
                   Explorar más cursos
                 </button>
@@ -567,7 +567,7 @@ export default function Dashboard() {
 
               {loading ? (
                 <div className="flex justify-center py-12">
-                  <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#FF69B4] border-t-transparent"></div>
+                  <div className="animate-spin rounded-full h-8 w-8 border-2 border-[#00FFE2] border-t-transparent"></div>
                 </div>
               ) : enrolledCourses.length > 0 ? (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -580,7 +580,7 @@ export default function Dashboard() {
                       className="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md transition-shadow duration-300"
                     >
                       {/* Course Thumbnail */}
-                      <div className="h-48 bg-gradient-to-br from-[#FF69B4]/20 to-[#C33B80]/20 relative">
+                      <div className="h-48 bg-gradient-to-br from-[#00FFE2]/20 to-[#A848F0]/20 relative">
                         <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getLevelColor(course.level)} text-white`}>
                           {course.level}
                         </div>
@@ -588,7 +588,7 @@ export default function Dashboard() {
                         {/* Progress Overlay */}
                         <div className="absolute bottom-0 left-0 right-0 h-1 bg-neutral-200">
                           <div 
-                            className="h-full bg-gradient-to-r from-[#FF69B4] to-[#C33B80]"
+                            className="h-full bg-gradient-to-r from-[#00FFE2] to-[#A848F0]"
                             style={{ width: `${course.progress_percentage}%` }}
                           ></div>
                         </div>
@@ -631,7 +631,7 @@ export default function Dashboard() {
                           </div>
                           <div className="w-full bg-neutral-200 rounded-full h-2">
                             <div 
-                              className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] h-2 rounded-full transition-all duration-300"
+                              className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] h-2 rounded-full transition-all duration-300"
                               style={{ width: `${course.progress_percentage}%` }}
                             ></div>
                           </div>
@@ -641,7 +641,7 @@ export default function Dashboard() {
                         <div className="space-y-2">
                           <button 
                             onClick={() => window.location.href = `/course/${course.id}/lessons`}
-                            className="w-full bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+                            className="w-full bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
                           >
                             {course.progress_percentage === 0 ? 'Comenzar Curso' : 'Continuar Aprendiendo'}
                           </button>
@@ -668,7 +668,7 @@ export default function Dashboard() {
                   </p>
                   <button 
                     onClick={() => window.location.href = '/cursos'}
-                    className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white font-semibold py-3 px-6 rounded-lg hover:scale-105 transition-transform duration-300"
+                    className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white font-semibold py-3 px-6 rounded-lg hover:scale-105 transition-transform duration-300"
                   >
                     Explorar Cursos
                   </button>

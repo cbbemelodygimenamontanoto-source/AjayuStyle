@@ -75,7 +75,7 @@ export default function Settings() {
                         onChange={(e) => handleSettingChange('emailNotifications', e.target.checked)}
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#FF69B4]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#FF69B4] peer-checked:to-[#C33B80]"></div>
+                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#00FFE2]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#00FFE2] peer-checked:to-[#A848F0]"></div>
                     </label>
                   </div>
 
@@ -91,7 +91,7 @@ export default function Settings() {
                         onChange={(e) => handleSettingChange('pushNotifications', e.target.checked)}
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#FF69B4]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#FF69B4] peer-checked:to-[#C33B80]"></div>
+                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#00FFE2]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#00FFE2] peer-checked:to-[#A848F0]"></div>
                     </label>
                   </div>
 
@@ -107,7 +107,7 @@ export default function Settings() {
                         onChange={(e) => handleSettingChange('newsletter', e.target.checked)}
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#FF69B4]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#FF69B4] peer-checked:to-[#C33B80]"></div>
+                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#00FFE2]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#00FFE2] peer-checked:to-[#A848F0]"></div>
                     </label>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export default function Settings() {
                         onChange={(e) => handleSettingChange('courseUpdates', e.target.checked)}
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#FF69B4]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#FF69B4] peer-checked:to-[#C33B80]"></div>
+                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#00FFE2]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#00FFE2] peer-checked:to-[#A848F0]"></div>
                     </label>
                   </div>
 
@@ -145,7 +145,7 @@ export default function Settings() {
                         onChange={(e) => handleSettingChange('socialUpdates', e.target.checked)}
                         className="sr-only peer"
                       />
-                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#FF69B4]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#FF69B4] peer-checked:to-[#C33B80]"></div>
+                      <div className="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#00FFE2]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-[#00FFE2] peer-checked:to-[#A848F0]"></div>
                     </label>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export default function Settings() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   variant="primary"
-                  className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] hover:from-[#FF69B4] hover:to-[#89004F] text-white border-0"
+                  className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] hover:from-[#00E6CC] hover:to-[#9339D9] text-white border-0"
                 >
                   Guardar cambios
                 </Button>

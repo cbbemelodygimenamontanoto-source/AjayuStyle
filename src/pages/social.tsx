@@ -41,7 +41,7 @@ export default function Social() {
     <Layout>
       <div className="min-h-screen bg-neutral-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#FF69B4]/10 to-[#C33B80]/10 py-16">
+        <section className="bg-gradient-to-r from-[#00FFE2]/10 to-[#A848F0]/10 py-16">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ export default function Social() {
               className="text-center max-w-4xl mx-auto"
             >
               <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-                Red Social de <span className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] bg-clip-text text-transparent">Diseñadores</span>
+                Red Social de <span className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] bg-clip-text text-transparent">Diseñadores</span>
               </h1>
               <p className="text-xl text-neutral-600 mb-8">
                 Conecta con otros diseñadores, comparte tus creaciones y encuentra inspiración. 
@@ -66,25 +66,25 @@ export default function Social() {
             <div className="max-w-2xl mx-auto">
               <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#FF69B4] to-[#C33B80] rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#00FFE2] to-[#A848F0] rounded-full flex items-center justify-center">
                     <span className="text-white font-medium">TU</span>
                   </div>
                   <div className="flex-1">
                     <textarea
                       placeholder="Comparte tu última creación o inspirate..."
-                      className="w-full p-3 border border-neutral-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-[#FF69B4] focus:border-transparent"
+                      className="w-full p-3 border border-neutral-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-[#00FFE2] focus:border-transparent"
                       rows={3}
                     />
                     <div className="flex items-center justify-between mt-3">
                       <div className="flex space-x-2">
-                        <button className="p-2 text-neutral-500 hover:text-[#FF69B4] transition-colors">
+                        <button className="p-2 text-neutral-500 hover:text-[#00FFE2] transition-colors">
                           <Camera className="w-5 h-5" />
                         </button>
-                        <button className="p-2 text-neutral-500 hover:text-[#C33B80] transition-colors">
+                        <button className="p-2 text-neutral-500 hover:text-[#A848F0] transition-colors">
                           <Share2 className="w-5 h-5" />
                         </button>
                       </div>
-                      <button className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] hover:from-[#FF69B4] hover:to-[#89004F] text-white px-6 py-2 rounded-lg transition-all duration-300">
+                      <button className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] hover:from-[#00E6CC] hover:to-[#9339D9] text-white px-6 py-2 rounded-lg transition-all duration-300">
                         Publicar
                       </button>
                     </div>
@@ -110,7 +110,7 @@ export default function Social() {
                   {/* Header del post */}
                   <div className="p-4 border-b border-neutral-100">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#FF69B4] to-[#C33B80] rounded-full flex items-center justify-center">
+                      <div className="w-10 h-10 bg-gradient-to-br from-[#00FFE2] to-[#A848F0] rounded-full flex items-center justify-center">
                         <span className="text-white font-medium text-sm">{post.avatar}</span>
                       </div>
                       <div>
@@ -137,12 +137,12 @@ export default function Social() {
                           <Heart className="w-5 h-5" />
                           <span className="text-sm">{post.likes}</span>
                         </button>
-                        <button className="flex items-center space-x-2 text-neutral-500 hover:text-[#FF69B4] transition-colors">
+                        <button className="flex items-center space-x-2 text-neutral-500 hover:text-[#00FFE2] transition-colors">
                           <MessageCircle className="w-5 h-5" />
                           <span className="text-sm">{post.comments}</span>
                         </button>
                       </div>
-                      <button className="text-neutral-500 hover:text-[#C33B80] transition-colors">
+                      <button className="text-neutral-500 hover:text-[#A848F0] transition-colors">
                         <Share2 className="w-5 h-5" />
                       </button>
                     </div>
@@ -157,7 +157,7 @@ export default function Social() {
         <section className="py-16">
           <div className="container text-center">
             <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-12 max-w-2xl mx-auto">
-              <Users className="w-16 h-16 text-[#C33B80] mx-auto mb-4" />
+              <Users className="w-16 h-16 text-[#A848F0] mx-auto mb-4" />
               <h2 className="text-2xl font-bold text-neutral-900 mb-4">
                 Módulo Opcional
               </h2>
@@ -165,7 +165,7 @@ export default function Social() {
                 La red social es completamente opcional. Puedes usar todos los demás módulos 
                 sin necesidad de registrarte en la red social.
               </p>
-              <button className="text-[#FF69B4] hover:text-[#C33B80] font-medium transition-colors">
+              <button className="text-[#00FFE2] hover:text-[#A848F0] font-medium transition-colors">
                 Explorar otros módulos →
               </button>
             </div>

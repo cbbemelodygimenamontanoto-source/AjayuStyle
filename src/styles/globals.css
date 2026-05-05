@@ -1,43 +1,43 @@
+/* Fuentes personalizadas - debe estar al inicio antes de cualquier otra regla */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:wght@400..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Fuentes personalizadas */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:wght@400..900&display=swap');
-
 /* Variables CSS personalizadas */
 :root {
-  --color-primary-50: #FFE0FF;
-  --color-primary-100: #FFA8D9;
-  --color-primary-200: #FF69B4;
-  --color-primary-300: #C33B80;
-  --color-primary-400: #C33B80;
-  --color-primary-500: #89004F;
-  --color-primary-600: #89004F;
-  --color-primary-700: #89004F;
-  --color-primary-800: #89004F;
-  --color-primary-900: #89004F;
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7;
+  --color-primary-600: #9333ea;
+  --color-primary-700: #7c3aed;
+  --color-primary-800: #6b21a8;
+  --color-primary-900: #581c87;
 
-  --color-accent-gold: #C33B80;
-  --color-accent-gold-light: #FFA8D9;
-  --color-accent-gold-dark: #89004F;
+  --color-accent-gold: #d4af37;
+  --color-accent-gold-light: #f7e98d;
+  --color-accent-gold-dark: #b8941f;
 }
 
 /* Utilidades personalizadas */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #C33B80 0%, #89004F 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #d4af37 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(135deg, #C33B80 0%, #89004F 100%);
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
   }
 
   .bg-gradient-gold {
-    background: linear-gradient(135deg, #C33B80 0%, #FFA8D9 100%);
+    background: linear-gradient(135deg, #d4af37 0%, #f7e98d 100%);
   }
 
   .section-spacing {
@@ -115,10 +115,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C33B80;
+  background: #a855f7;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #89004F;
+  background: #9333ea;
 }

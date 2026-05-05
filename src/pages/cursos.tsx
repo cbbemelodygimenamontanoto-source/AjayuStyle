@@ -86,7 +86,7 @@ export default function Cursos() {
     <Layout>
       <div className="min-h-screen bg-neutral-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#FF69B4]/10 to-[#C33B80]/10 py-20">
+        <section className="bg-gradient-to-r from-[#00FFE2]/10 to-[#A848F0]/10 py-20">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -95,7 +95,7 @@ export default function Cursos() {
               className="text-center max-w-4xl mx-auto"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-6">
-                Cursos de <span className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] bg-clip-text text-transparent">Diseño de Moda</span>
+                Cursos de <span className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] bg-clip-text text-transparent">Diseño de Moda</span>
               </h1>
               <p className="text-xl text-neutral-600 mb-8 leading-relaxed">
                 Descubre nuestra colección de cursos diseñados para llevarte desde los fundamentos 
@@ -122,7 +122,7 @@ export default function Cursos() {
                     onClick={() => setSelectedLevel(filter.key)}
                     className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                       selectedLevel === filter.key
-                        ? 'bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white shadow-lg'
+                        ? 'bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white shadow-lg'
                         : 'bg-white text-neutral-700 hover:bg-neutral-100 border border-neutral-200'
                     }`}
                   >
@@ -143,7 +143,7 @@ export default function Cursos() {
           <div className="container">
             {loading ? (
               <div className="flex justify-center items-center py-20">
-                <div className="animate-spin rounded-full h-12 w-12 border-2 border-[#FF69B4] border-t-transparent"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-2 border-[#00FFE2] border-t-transparent"></div>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -156,7 +156,7 @@ export default function Cursos() {
                     className="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden hover:shadow-lg transition-all duration-300 group"
                   >
                     {/* Course Thumbnail */}
-                    <div className="relative h-48 bg-gradient-to-br from-[#FF69B4]/20 to-[#C33B80]/20">
+                    <div className="relative h-48 bg-gradient-to-br from-[#00FFE2]/20 to-[#A848F0]/20">
                       {course.thumbnail ? (
                         <img 
                           src={course.thumbnail} 
@@ -165,7 +165,7 @@ export default function Cursos() {
                         />
                       ) : (
                         <div className="flex items-center justify-center h-full">
-                          <BookOpen className="w-16 h-16 text-[#C33B80]" />
+                          <BookOpen className="w-16 h-16 text-[#A848F0]" />
                         </div>
                       )}
                       
@@ -200,7 +200,7 @@ export default function Cursos() {
                         </div>
                       </div>
 
-                      <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-[#C33B80] transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-[#A848F0] transition-colors duration-300">
                         {course.title}
                       </h3>
                       
@@ -211,7 +211,7 @@ export default function Cursos() {
                       {/* Instructor */}
                       {course.instructor_name && (
                         <div className="flex items-center space-x-2 mb-4">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#FF69B4] to-[#C33B80] flex items-center justify-center text-xs font-bold text-white">
+                          <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#00FFE2] to-[#A848F0] flex items-center justify-center text-xs font-bold text-white">
                             {course.instructor_name.charAt(0)}
                           </div>
                           <span className="text-sm text-neutral-700">Por {course.instructor_name}</span>
@@ -246,7 +246,7 @@ export default function Cursos() {
                             className={`w-full px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center ${
                               enrollingCourse === course.id
                                 ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                                : 'bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white hover:shadow-lg hover:scale-105'
+                                : 'bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white hover:shadow-lg hover:scale-105'
                             }`}
                           >
                             {enrollingCourse === course.id ? (
@@ -264,7 +264,7 @@ export default function Cursos() {
                         ) : (
                           <button
                             onClick={() => window.location.href = '/login'}
-                            className="w-full px-4 py-3 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white font-medium rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300"
+                            className="w-full px-4 py-3 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white font-medium rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300"
                           >
                             Iniciar Sesión para Inscribirse
                           </button>
@@ -300,7 +300,7 @@ export default function Cursos() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Play className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-neutral-900 mb-2">Contenido Interactivo</h3>
@@ -308,7 +308,7 @@ export default function Cursos() {
               </div>
 
               <div className="text-center p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-neutral-900 mb-2">Certificación</h3>
@@ -316,7 +316,7 @@ export default function Cursos() {
               </div>
 
               <div className="text-center p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-neutral-900 mb-2">Comunidad Activa</h3>
@@ -327,7 +327,7 @@ export default function Cursos() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-[#FF69B4] to-[#C33B80]">
+        <section className="py-20 bg-gradient-to-r from-[#00FFE2] to-[#A848F0]">
           <div className="container text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -347,21 +347,21 @@ export default function Cursos() {
                 {user ? (
                   <button 
                     onClick={() => window.location.href = '/dashboard'}
-                    className="bg-white text-[#C33B80] font-semibold py-4 px-8 rounded-lg hover:bg-neutral-100 transition-colors text-lg"
+                    className="bg-white text-[#A848F0] font-semibold py-4 px-8 rounded-lg hover:bg-neutral-100 transition-colors text-lg"
                   >
                     Ir a Mi Dashboard
                   </button>
                 ) : (
                   <button 
                     onClick={() => window.location.href = '/register'}
-                    className="bg-white text-[#C33B80] font-semibold py-4 px-8 rounded-lg hover:bg-neutral-100 transition-colors text-lg"
+                    className="bg-white text-[#A848F0] font-semibold py-4 px-8 rounded-lg hover:bg-neutral-100 transition-colors text-lg"
                   >
                     Registrarse Gratis
                   </button>
                 )}
                 <button 
                   onClick={() => window.location.href = '/cursos'}
-                  className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-[#C33B80] transition-colors text-lg"
+                  className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-[#A848F0] transition-colors text-lg"
                 >
                   Explorar Cursos
                 </button>

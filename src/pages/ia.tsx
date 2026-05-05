@@ -8,7 +8,7 @@ export default function IA() {
     <Layout>
       <div className="min-h-screen bg-neutral-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#FF69B4]/10 to-[#C33B80]/10 py-16">
+        <section className="bg-gradient-to-r from-[#00FFE2]/10 to-[#A848F0]/10 py-16">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -17,7 +17,7 @@ export default function IA() {
               className="text-center max-w-4xl mx-auto"
             >
               <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-                Inteligencia Artificial para <span className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] bg-clip-text text-transparent">Diseño de Moda</span>
+                Inteligencia Artificial para <span className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] bg-clip-text text-transparent">Diseño de Moda</span>
               </h1>
               <p className="text-xl text-neutral-600 mb-8">
                 Potencia tu creatividad con herramientas de IA avanzadas para patronaje, análisis de telas y diseño asistido.
@@ -59,7 +59,7 @@ export default function IA() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6 hover:shadow-md transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] rounded-lg flex items-center justify-center text-white mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] rounded-lg flex items-center justify-center text-white mb-4">
                     {tool.icon}
                   </div>
                   <h3 className="text-xl font-semibold text-neutral-900 mb-2">
@@ -68,7 +68,7 @@ export default function IA() {
                   <p className="text-neutral-600 mb-4">
                     {tool.description}
                   </p>
-                  <button className="text-[#FF69B4] hover:text-[#C33B80] font-medium transition-colors">
+                  <button className="text-[#00FFE2] hover:text-[#A848F0] font-medium transition-colors">
                     Probar ahora →
                   </button>
                 </motion.div>
@@ -81,7 +81,7 @@ export default function IA() {
         <section className="py-16">
           <div className="container text-center">
             <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-12 max-w-2xl mx-auto">
-              <Brain className="w-16 h-16 text-[#C33B80] mx-auto mb-4" />
+              <Brain className="w-16 h-16 text-[#A848F0] mx-auto mb-4" />
               <h2 className="text-2xl font-bold text-neutral-900 mb-4">
                 Módulo en Desarrollo
               </h2>

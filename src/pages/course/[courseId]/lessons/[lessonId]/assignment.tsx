@@ -209,7 +209,7 @@ export default function AssignmentPage() {
       <Layout>
         <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#C33B80] mx-auto"></div>
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#A848F0] mx-auto"></div>
             <p className="mt-4 text-neutral-600">Cargando tarea...</p>
           </div>
         </div>
@@ -223,7 +223,7 @@ export default function AssignmentPage() {
         <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-neutral-900 mb-4">Tarea no encontrada</h1>
-            <Link href={`/course/${courseId}/lessons`} className="text-[#C33B80] hover:text-[#FF69B4]">
+            <Link href={`/course/${courseId}/lessons`} className="text-[#A848F0] hover:text-[#00FFE2]">
               Volver a las lecciones
             </Link>
           </div>
@@ -243,7 +243,7 @@ export default function AssignmentPage() {
             <div className="max-w-4xl mx-auto">
               <Link 
                 href={`/course/${courseId}/lessons`}
-                className="text-[#C33B80] hover:text-[#FF69B4] mb-4 inline-flex items-center"
+                className="text-[#A848F0] hover:text-[#00FFE2] mb-4 inline-flex items-center"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Volver a las lecciones
@@ -341,7 +341,7 @@ export default function AssignmentPage() {
                             </p>
                           </div>
                         </div>
-                        <button className="text-[#C33B80] hover:text-[#FF69B4] font-medium">
+                        <button className="text-[#A848F0] hover:text-[#00FFE2] font-medium">
                           <Download className="w-4 h-4" />
                         </button>
                       </div>
@@ -379,7 +379,7 @@ export default function AssignmentPage() {
                   {assignment.status === 'pending' && (
                     <button
                       onClick={() => setShowSubmissionModal(true)}
-                      className="w-full bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white font-medium py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+                      className="w-full bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white font-medium py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center"
                     >
                       <Upload className="w-4 h-4 mr-2" />
                       Enviar Tarea
@@ -407,7 +407,7 @@ export default function AssignmentPage() {
                   <h3 className="text-lg font-bold text-neutral-900 mb-4">Cronología</h3>
                   <div className="space-y-3">
                     <div className="flex items-center text-sm">
-                      <div className="w-2 h-2 bg-[#C33B80] rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-[#A848F0] rounded-full mr-3"></div>
                       <div>
                         <p className="font-medium">Tarea publicada</p>
                         <p className="text-neutral-600">{assignment.created_at.toLocaleDateString()}</p>
@@ -457,7 +457,7 @@ export default function AssignmentPage() {
                     type="file"
                     onChange={handleFileSelect}
                     accept={assignment.file_types_allowed.split(',').map(ext => `.${ext.trim()}`).join(',')}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#C33B80] focus:border-transparent"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-[#A848F0] focus:border-transparent"
                   />
                   <p className="text-xs text-neutral-600 mt-1">
                     Formatos: {assignment.file_types_allowed} • Máximo: {assignment.max_file_size_mb} MB
@@ -474,7 +474,7 @@ export default function AssignmentPage() {
                   <button
                     onClick={handleSubmission}
                     disabled={!selectedFile || uploading}
-                    className="flex-1 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {uploading ? 'Enviando...' : 'Enviar'}
                   </button>

@@ -1,3 +1,9 @@
+/**
+ * SUITE DE PRUEBAS UNITARIAS SIMPLES - AJAYU EDUCATION
+ * =====================================================
+ * Tests independientes que funcionan con mocks simples
+ */
+
 const mockExecuteQuery = jest.fn();
 const mockGetUserFromToken = jest.fn();
 
@@ -13,11 +19,15 @@ jest.mock('@/lib/auth', () => ({
   __esModule: true,
 }));
 
-
+// ============================================
+// DATOS MOCK
+// ============================================
 const INSTRUCTOR = { id: 1, name: 'Instructor', role: 'instructor' };
 const STUDENT = { id: 2, name: 'Estudiante', role: 'student' };
 
-
+// ============================================
+// 1. CURSOS (INSTRUCTOR) - CRUD
+// ============================================
 describe('1. Cursos Instructor - CRUD', () => {
   
   beforeEach(() => {
@@ -81,7 +91,7 @@ describe('1. Cursos Instructor - CRUD', () => {
   test('1.9 DELETE - Eliminar curso exitoso', async () => {
     mockExecuteQuery.mockResolvedValue({ affectedRows: 1 });
     const result = await mockExecuteQuery('DELETE FROM courses');
-    expect(result.affectedRows).toBe(7);
+    expect(result.affectedRows).toBe(1);
   });
 
   test('1.10 DELETE - Verificar estudiantes antes de eliminar', async () => {
@@ -100,6 +110,9 @@ describe('1. Cursos Instructor - CRUD', () => {
   });
 });
 
+// ============================================
+// 2. LECCIONES (INSTRUCTOR) - CRUD
+// ============================================
 describe('2. Lecciones Instructor - CRUD', () => {
   
   beforeEach(() => {
@@ -110,7 +123,7 @@ describe('2. Lecciones Instructor - CRUD', () => {
   test('2.1 POST - Crear lección exitosa', async () => {
     mockExecuteQuery.mockResolvedValue({ insertId: 1 });
     const result = await mockExecuteQuery('INSERT INTO lessons');
-    expect(result.insertId).toBe(8);
+    expect(result.insertId).toBe(1);
   });
 
   test('2.2 POST - Validar título no vacío', () => {
@@ -176,7 +189,9 @@ describe('2. Lecciones Instructor - CRUD', () => {
   });
 });
 
-
+// ============================================
+// 3. TAREAS (INSTRUCTOR) - CRUD
+// ============================================
 describe('3. Tareas Instructor - CRUD', () => {
   
   beforeEach(() => {
@@ -250,7 +265,9 @@ describe('3. Tareas Instructor - CRUD', () => {
   });
 });
 
-
+// ============================================
+// 4. CURSOS (USUARIO NORMAL) - VER Y AÑADIR
+// ============================================
 describe('4. Cursos Usuario Normal - Ver y Añadir', () => {
   
   beforeEach(() => {
@@ -318,7 +335,9 @@ describe('4. Cursos Usuario Normal - Ver y Añadir', () => {
   });
 });
 
-
+// ============================================
+// 5. RESEÑAS - CREAR
+// ============================================
 describe('5. Reseñas - Crear y Gestionar', () => {
   
   beforeEach(() => {

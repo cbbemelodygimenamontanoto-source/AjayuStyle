@@ -8,7 +8,7 @@ export default function Avatares() {
     <Layout>
       <div className="min-h-screen bg-neutral-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#FF69B4]/10 to-[#C33B80]/10 py-16">
+        <section className="bg-gradient-to-r from-[#00FFE2]/10 to-[#A848F0]/10 py-16">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -17,7 +17,7 @@ export default function Avatares() {
               className="text-center max-w-4xl mx-auto"
             >
               <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-                Crea <span className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] bg-clip-text text-transparent">Avatares</span> Únicos
+                Crea <span className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] bg-clip-text text-transparent">Avatares</span> Únicos
               </h1>
               <p className="text-xl text-neutral-600 mb-8">
                 Diseña avatares personalizados para mostrar tus creaciones de moda. 
@@ -55,7 +55,7 @@ export default function Avatares() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white rounded-xl shadow-sm border border-neutral-200 p-6 text-center"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#FF69B4] to-[#C33B80] rounded-lg flex items-center justify-center text-white mx-auto mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#00FFE2] to-[#A848F0] rounded-lg flex items-center justify-center text-white mx-auto mb-4">
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-semibold text-neutral-900 mb-2">
@@ -84,15 +84,15 @@ export default function Avatares() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: (avatar % 6) * 0.1 }}
-                  className="aspect-square bg-gradient-to-br from-[#FF69B4]/20 to-[#C33B80]/20 rounded-xl flex items-center justify-center cursor-pointer hover:shadow-md transition-all duration-300 group"
+                  className="aspect-square bg-gradient-to-br from-[#00FFE2]/20 to-[#A848F0]/20 rounded-xl flex items-center justify-center cursor-pointer hover:shadow-md transition-all duration-300 group"
                 >
-                  <User className="w-8 h-8 text-[#C33B80] group-hover:scale-110 transition-transform" />
+                  <User className="w-8 h-8 text-[#A848F0] group-hover:scale-110 transition-transform" />
                 </motion.div>
               ))}
             </div>
 
             <div className="text-center mt-8">
-              <button className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] hover:from-[#FF69B4] hover:to-[#89004F] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] hover:from-[#00E6CC] hover:to-[#9339D9] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300">
                 Crear Nuevo Avatar
               </button>
             </div>
@@ -103,7 +103,7 @@ export default function Avatares() {
         <section className="py-16">
           <div className="container text-center">
             <div className="bg-white rounded-xl shadow-sm border border-neutral-200 p-12 max-w-2xl mx-auto">
-              <Palette className="w-16 h-16 text-[#C33B80] mx-auto mb-4" />
+              <Palette className="w-16 h-16 text-[#A848F0] mx-auto mb-4" />
               <h2 className="text-2xl font-bold text-neutral-900 mb-4">
                 Editor en Desarrollo
               </h2>
@@ -111,7 +111,7 @@ export default function Avatares() {
                 Estamos creando el editor de avatares más avanzado para diseñadores de moda. 
                 ¡Pronto podrás crear avatares únicos para tus diseños!
               </p>
-              <button className="text-[#FF69B4] hover:text-[#C33B80] font-medium transition-colors">
+              <button className="text-[#00FFE2] hover:text-[#A848F0] font-medium transition-colors">
                 Notificarme cuando esté listo →
               </button>
             </div>

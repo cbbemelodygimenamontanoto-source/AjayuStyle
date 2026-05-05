@@ -104,7 +104,7 @@ export default function Login() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF69B4] focus:border-transparent transition-all duration-300"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00FFE2] focus:border-transparent transition-all duration-300"
                   placeholder="tu@email.com"
                 />
               </div>
@@ -120,7 +120,7 @@ export default function Login() {
                   required
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF69B4] focus:border-transparent transition-all duration-300"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00FFE2] focus:border-transparent transition-all duration-300"
                   placeholder="Tu contraseña"
                 />
               </div>
@@ -138,7 +138,7 @@ export default function Login() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-[#FF69B4] focus:ring-[#FF69B4] border-neutral-300 rounded"
+                  className="h-4 w-4 text-[#00FFE2] focus:ring-[#00FFE2] border-neutral-300 rounded"
                 />
                 <label htmlFor="remember-me" className="ml-2 block text-sm text-neutral-700">
                   Recordarme
@@ -146,7 +146,7 @@ export default function Login() {
               </div>
 
               <div className="text-sm">
-                <a href="#" className="text-[#FF69B4] hover:text-[#FF69B4] transition-colors">
+                <a href="#" className="text-[#00FFE2] hover:text-[#00E6CC] transition-colors">
                   ¿Olvidaste tu contraseña?
                 </a>
               </div>
@@ -157,7 +157,7 @@ export default function Login() {
               variant="primary"
               size="lg"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-[#FF69B4] to-[#C33B80] hover:from-[#FF69B4] hover:to-[#89004F] text-white border-0"
+              className="w-full bg-gradient-to-r from-[#00FFE2] to-[#A848F0] hover:from-[#00E6CC] hover:to-[#9339D9] text-white border-0"
             >
               {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
             </Button>
@@ -165,7 +165,7 @@ export default function Login() {
             <div className="text-center">
               <p className="text-sm text-neutral-600">
                 ¿No tienes cuenta?{' '}
-                <Link href="/register" className="text-[#C33B80] hover:text-[#89004F] font-medium transition-colors">
+                <Link href="/register" className="text-[#A848F0] hover:text-[#9339D9] font-medium transition-colors">
                   Regístrate aquí
                 </Link>
               </p>

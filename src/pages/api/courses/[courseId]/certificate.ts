@@ -116,8 +116,8 @@ export default async function handler(
           border-radius: 10px;
           box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         ">
-          <div style="border: 3px solid #FF69B4; padding: 30px; border-radius: 15px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
-            <h1 style="font-size: 36px; margin-bottom: 20px; color: #FF69B4; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+          <div style="border: 3px solid #00FFE2; padding: 30px; border-radius: 15px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+            <h1 style="font-size: 36px; margin-bottom: 20px; color: #00FFE2; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
               🏆 CERTIFICADO DE FINALIZACIÓN 🏆
             </h1>
             
@@ -127,7 +127,7 @@ export default async function handler(
                 ${enrollment.user_name || 'Estudiante'}
               </h2>
               <p style="margin: 10px 0;">ha completado exitosamente el curso</p>
-              <h3 style="font-size: 24px; color: #C33B80; margin: 15px 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+              <h3 style="font-size: 24px; color: #A848F0; margin: 15px 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
                 "${enrollment.course_title}"
               </h3>
             </div>
@@ -138,8 +138,8 @@ export default async function handler(
               <p style="margin: 5px 0; font-size: 14px;">Progreso completado: 100%</p>
             </div>
             
-            <div style="border-top: 2px solid #FF69B4; margin-top: 30px; padding-top: 20px;">
-              <p style="font-size: 16px; color: #FF69B4; margin: 5px 0;">
+            <div style="border-top: 2px solid #00FFE2; margin-top: 30px; padding-top: 20px;">
+              <p style="font-size: 16px; color: #00FFE2; margin: 5px 0;">
                 Certificado #${certificate.certificate_number}
               </p>
               <p style="font-size: 12px; color: #ccc; margin: 5px 0;">

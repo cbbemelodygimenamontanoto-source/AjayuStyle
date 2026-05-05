@@ -158,7 +158,7 @@ export default function LessonsPage() {
     return (
       <Layout>
         <div className="flex items-center justify-center min-h-screen">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF69B4]"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#00FFE2]"></div>
         </div>
       </Layout>
     );
@@ -177,10 +177,10 @@ export default function LessonsPage() {
               </div>
               <div className="text-right">
                 <div className="text-sm text-gray-500">Progreso del curso</div>
-                <div className="text-2xl font-bold text-[#FF69B4]">{course?.progress_percentage}%</div>
+                <div className="text-2xl font-bold text-[#00FFE2]">{course?.progress_percentage}%</div>
                 <div className="w-32 bg-gray-200 rounded-full h-2 mt-2">
                   <div 
-                    className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] h-2 rounded-full transition-all duration-300"
+                    className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] h-2 rounded-full transition-all duration-300"
                     style={{ width: `${course?.progress_percentage}%` }}
                   ></div>
                 </div>
@@ -204,7 +204,7 @@ export default function LessonsPage() {
                       whileTap={{ scale: 0.98 }}
                       className={`p-3 rounded-lg cursor-pointer border transition-all duration-200 ${
                         currentLesson?.id === lesson.id
-                          ? 'bg-[#FF69B4] bg-opacity-10 border-[#FF69B4]'
+                          ? 'bg-[#00FFE2] bg-opacity-10 border-[#00FFE2]'
                           : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
                       }`}
                       onClick={() => setCurrentLesson(lesson)}
@@ -236,7 +236,7 @@ export default function LessonsPage() {
                         <div className="mt-2">
                           <div className="w-full bg-gray-200 rounded-full h-1">
                             <div 
-                              className="bg-[#FF69B4] h-1 rounded-full transition-all duration-300"
+                              className="bg-[#00FFE2] h-1 rounded-full transition-all duration-300"
                               style={{ width: `${lesson.watch_percentage}%` }}
                             ></div>
                           </div>
@@ -329,7 +329,7 @@ export default function LessonsPage() {
                               key={resource.id}
                               className="flex items-center p-3 bg-gray-50 rounded-lg border"
                             >
-                              <div className="flex items-center justify-center w-10 h-10 bg-[#FF69B4] bg-opacity-20 rounded-lg mr-3">
+                              <div className="flex items-center justify-center w-10 h-10 bg-[#00FFE2] bg-opacity-20 rounded-lg mr-3">
                                 {getResourceIcon(resource.file_type)}
                               </div>
                               <div className="flex-1">
@@ -341,7 +341,7 @@ export default function LessonsPage() {
                               <a
                                 href={resource.file_url}
                                 download
-                                className="ml-3 p-2 text-[#FF69B4] hover:bg-[#FF69B4] hover:bg-opacity-10 rounded-lg transition-colors"
+                                className="ml-3 p-2 text-[#00FFE2] hover:bg-[#00FFE2] hover:bg-opacity-10 rounded-lg transition-colors"
                               >
                                 <Download className="w-4 h-4" />
                               </a>

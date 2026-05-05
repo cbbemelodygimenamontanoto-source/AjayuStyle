@@ -230,7 +230,7 @@ export default function CourseLessons() {
       <Layout>
         <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#C33B80] mx-auto"></div>
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#A848F0] mx-auto"></div>
             <p className="mt-4 text-neutral-600">Cargando lecciones...</p>
           </div>
         </div>
@@ -252,12 +252,12 @@ export default function CourseLessons() {
               <p><strong>Estado BD:</strong> Verificando conexión...</p>
             </div>
             <div className="mt-4 space-x-4">
-              <Link href="/dashboard" className="text-[#C33B80] hover:text-[#FF69B4]">
+              <Link href="/dashboard" className="text-[#A848F0] hover:text-[#00FFE2]">
                 Volver al dashboard
               </Link>
               <button 
                 onClick={() => window.location.reload()} 
-                className="bg-[#C33B80] text-white px-4 py-2 rounded hover:bg-[#9338d4]"
+                className="bg-[#A848F0] text-white px-4 py-2 rounded hover:bg-[#9338d4]"
               >
                 Reintentar
               </button>
@@ -280,7 +280,7 @@ export default function CourseLessons() {
               <p><strong>Estado de carga:</strong> {loading ? 'Cargando desde BD...' : 'Completado'}</p>
               <p><strong>Fuente de datos:</strong> Base de datos MySQL</p>
             </div>
-            <Link href="/dashboard" className="text-[#C33B80] hover:text-[#FF69B4]">
+            <Link href="/dashboard" className="text-[#A848F0] hover:text-[#00FFE2]">
               Volver al dashboard
             </Link>
           </div>
@@ -318,7 +318,7 @@ export default function CourseLessons() {
             <div className="max-w-7xl mx-auto">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <Link href="/dashboard" className="text-[#C33B80] hover:text-[#FF69B4] mb-4 inline-block">
+                  <Link href="/dashboard" className="text-[#A848F0] hover:text-[#00FFE2] mb-4 inline-block">
                     ← Volver al dashboard
                   </Link>
                   <h1 className="text-3xl font-bold text-neutral-900 mb-2">{course.title}</h1>
@@ -330,7 +330,7 @@ export default function CourseLessons() {
                     {course.level}
                   </span>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-[#FF69B4]">{course.progress_percentage}%</div>
+                    <div className="text-2xl font-bold text-[#00FFE2]">{course.progress_percentage}%</div>
                     <div className="text-sm text-neutral-600">Completado</div>
                   </div>
                 </div>
@@ -373,7 +373,7 @@ export default function CourseLessons() {
                           lesson.completed 
                             ? 'bg-green-500' 
                             : lesson.is_preview 
-                            ? 'bg-[#C33B80]' 
+                            ? 'bg-[#A848F0]' 
                             : 'bg-neutral-400'
                         }`}>
                           {lesson.completed ? (
@@ -420,7 +420,7 @@ export default function CourseLessons() {
                               e.stopPropagation();
                               openLesson(lesson);
                             }}
-                            className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center"
+                            className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center"
                           >
                             <Play className="w-4 h-4 mr-2" />
                             {index === 0 ? 'Comenzar' : 'Continuar'}
@@ -454,8 +454,8 @@ export default function CourseLessons() {
               
               <div className="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
                 <div className="mb-6">
-                  <div className="bg-gradient-to-r from-[#FF69B4]/20 to-[#C33B80]/20 rounded-lg p-8 text-center">
-                    <Play className="w-16 h-16 text-[#C33B80] mx-auto mb-4" />
+                  <div className="bg-gradient-to-r from-[#00FFE2]/20 to-[#A848F0]/20 rounded-lg p-8 text-center">
+                    <Play className="w-16 h-16 text-[#A848F0] mx-auto mb-4" />
                     <h3 className="text-xl font-semibold text-neutral-900 mb-2">
                       Contenido de la Lección
                     </h3>

@@ -213,7 +213,7 @@ export default function AssignmentsPage() {
     return (
       <Layout>
         <div className="flex items-center justify-center min-h-screen">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF69B4]"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#00FFE2]"></div>
         </div>
       </Layout>
     );
@@ -328,7 +328,7 @@ export default function AssignmentsPage() {
                                 <a
                                   href={assignment.submission.file_url}
                                   download
-                                  className="text-[#FF69B4] hover:underline flex items-center"
+                                  className="text-[#00FFE2] hover:underline flex items-center"
                                 >
                                   Descargar archivo enviado
                                   <Download className="w-3 h-3 ml-1" />
@@ -383,7 +383,7 @@ export default function AssignmentsPage() {
                             <Button
                               onClick={() => document.getElementById(`file-${assignment.id}`)?.click()}
                               disabled={uploading === assignment.id}
-                              className="bg-[#FF69B4] hover:bg-[#FF69B4] text-black"
+                              className="bg-[#00FFE2] hover:bg-[#00E6CC] text-black"
                             >
                               <Upload className="w-4 h-4 mr-2" />
                               {uploading === assignment.id ? 'Subiendo...' : 'Seleccionar Archivo'}
@@ -406,7 +406,7 @@ export default function AssignmentsPage() {
                               [assignment.id]: e.target.value
                             }))}
                             rows={4}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF69B4] focus:border-transparent"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00FFE2] focus:border-transparent"
                             placeholder="Escribe tu respuesta aquí..."
                           />
                         </div>

@@ -35,7 +35,8 @@ export async function testConnection(): Promise<boolean> {
 
 // Función para ejecutar consultas
 export async function executeQuery(sql: string, params: any[] = []): Promise<any[]> {
-  const [rows] = await pool.execute(sql, params);
+  // Usar pool.query en lugar de pool.execute para mayor flexibilidad con tipos de datos
+  const [rows] = await pool.query(sql, params);
   return rows as any[];
 }
 

@@ -1,6 +1,11 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 
+// ============================================
+// MOCKS GLOBALES PARA PRUEBAS UNITARIAS
+// ============================================
+
+// Mock localStorage
 const localStorageMock = {
   getItem: jest.fn((key: string) => {
     const store: Record<string, string> = {
@@ -17,8 +22,12 @@ const localStorageMock = {
 };
 global.localStorage = localStorageMock as any;
 
+// Mock fetch
 global.fetch = jest.fn();
 
+// ============================================
+// MOCKS DE BASE DE DATOS
+// ============================================
 const mockDatabase = {
   executeQuery: jest.fn(),
   query: jest.fn(),
@@ -33,9 +42,12 @@ jest.mock('@/lib/database', () => ({
   __esModule: true,
 }));
 
+// Para reutilizar en tests
 export { mockDatabase };
 
-
+// ============================================
+// MOCKS DE AUTENTICACIÓN
+// ============================================
 const mockAuth = {
   getUserFromToken: jest.fn(),
   verifyToken: jest.fn(),
@@ -49,7 +61,11 @@ jest.mock('@/lib/auth', () => ({
 
 export { mockAuth };
 
+// ============================================
+// MOCKS DE LUCIDE-ICONS USANDO React.createElement
+// ============================================
 
+// Función helper para crear iconos mock
 const createMockIcon = (testId: string, content: string) => {
   return function MockIcon({ className }: { className?: string }) {
     return React.createElement('span', { 'data-testid': testId, className }, content);
@@ -62,6 +78,7 @@ const createMockIconWithFill = (testId: string, content: string) => {
   };
 };
 
+// Crear los componentes mock
 const MockStar = createMockIconWithFill('star-icon', '★');
 const MockStarHalf = createMockIcon('star-half-icon', '★');
 const MockThumbsUp = createMockIcon('thumbs-up-icon', '👍');
@@ -222,6 +239,11 @@ jest.mock('lucide-react', () => ({
   TrendingDown: MockTrendingDown,
 }));
 
+// ============================================
+// CONFIGURACIÓN DE JEST
+// ============================================
+
+// Silence React warnings in tests
 const originalError = console.error;
 beforeAll(() => {
   console.error = (...args: any[]) => {
@@ -239,6 +261,7 @@ afterAll(() => {
   console.error = originalError;
 });
 
+// Helper para limpiar mocks entre tests
 beforeEach(() => {
   jest.clearAllMocks();
   localStorageMock.getItem.mockReturnValue('mock-token-12345');

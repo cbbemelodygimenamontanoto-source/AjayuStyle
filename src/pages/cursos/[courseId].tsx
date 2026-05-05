@@ -120,7 +120,7 @@ export default function CourseDetail() {
       <Layout>
         <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#C33B80] mx-auto"></div>
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#A848F0] mx-auto"></div>
             <p className="mt-4 text-neutral-600">Cargando curso...</p>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function CourseDetail() {
         <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-neutral-900 mb-4">Curso no encontrado</h1>
-            <Link href="/cursos" className="text-[#C33B80] hover:text-[#FF69B4]">
+            <Link href="/cursos" className="text-[#A848F0] hover:text-[#00FFE2]">
               Volver a cursos
             </Link>
           </div>
@@ -147,10 +147,10 @@ export default function CourseDetail() {
     <Layout>
       <div className="min-h-screen bg-neutral-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#FF69B4]/10 to-[#C33B80]/10 py-16">
+        <section className="bg-gradient-to-r from-[#00FFE2]/10 to-[#A848F0]/10 py-16">
           <div className="container">
             <div className="max-w-6xl mx-auto">
-              <Link href="/cursos" className="text-[#C33B80] hover:text-[#FF69B4] mb-4 inline-block">
+              <Link href="/cursos" className="text-[#A848F0] hover:text-[#00FFE2] mb-4 inline-block">
                 ← Volver a cursos
               </Link>
               
@@ -187,7 +187,7 @@ export default function CourseDetail() {
                   </div>
                   
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#FF69B4] to-[#C33B80] flex items-center justify-center text-white font-bold">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#00FFE2] to-[#A848F0] flex items-center justify-center text-white font-bold">
                       {course.instructor_name?.charAt(0) || 'I'}
                     </div>
                     <div>
@@ -213,7 +213,7 @@ export default function CourseDetail() {
                           ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                           : course.price === 0
                           ? 'bg-gradient-to-r from-green-500 to-green-600 text-white hover:shadow-lg'
-                          : 'bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white hover:shadow-lg hover:scale-105'
+                          : 'bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white hover:shadow-lg hover:scale-105'
                       }`}
                     >
                       {enrollingCourse ? (
@@ -231,7 +231,7 @@ export default function CourseDetail() {
                     
                     <Link
                       href={`/courses/${courseId}/lessons`}
-                      className="flex-1 px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center bg-white border-2 border-[#FF69B4] text-[#FF69B4] hover:bg-[#FF69B4] hover:text-white"
+                      className="flex-1 px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center bg-white border-2 border-[#00FFE2] text-[#00FFE2] hover:bg-[#00FFE2] hover:text-white"
                     >
                       <BookOpen className="w-4 h-4 mr-2" />
                       Ver Lecciones
@@ -289,7 +289,7 @@ export default function CourseDetail() {
                       <div className="space-y-3">
                         {course.lessons.map((lesson, index) => (
                           <div key={lesson.id} className="flex items-center p-3 bg-neutral-50 rounded-lg">
-                            <div className="w-8 h-8 bg-[#C33B80] text-white rounded-full flex items-center justify-center text-sm font-medium mr-4">
+                            <div className="w-8 h-8 bg-[#A848F0] text-white rounded-full flex items-center justify-center text-sm font-medium mr-4">
                               {index + 1}
                             </div>
                             <div className="flex-1">
@@ -307,7 +307,7 @@ export default function CourseDetail() {
                         <div className="mt-4 pt-4 border-t border-neutral-200">
                           <Link
                             href={`/courses/${courseId}/lessons`}
-                            className="w-full py-2 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center bg-gradient-to-r from-[#FF69B4] to-[#C33B80] text-white hover:shadow-lg"
+                            className="w-full py-2 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center bg-gradient-to-r from-[#00FFE2] to-[#A848F0] text-white hover:shadow-lg"
                           >
                             <Play className="w-4 h-4 mr-2" />
                             Comenzar a Estudiar

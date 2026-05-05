@@ -14,7 +14,7 @@ const modules: ModuleCardType[] = [
     description: 'Aprende diseño de moda con nuestro sistema tipo Moodle. Cursos secuenciales, tareas, progreso y certificados.',
     icon: <BookOpen className="w-8 h-8" />,
     href: '/cursos',
-    color: 'bg-gradient-to-br from-[#C33B80]/20 to-[#C33B80]/10 text-[#C33B80]',
+    color: 'bg-gradient-to-br from-[#00FFE2]/20 to-[#00FFE2]/10 text-[#00FFE2]',
     features: [
       'Lecciones secuenciales obligatorias',
       'Videos, documentos y tareas',
@@ -30,7 +30,7 @@ const modules: ModuleCardType[] = [
     description: 'Asistencia de diseño con IA: patronaje, cálculo de tallas, análisis de telas y recomendaciones personalizadas.',
     icon: <Brain className="w-8 h-8" />,
     href: '/ia',
-    color: 'bg-gradient-to-br from-[#FF69B4]/20 to-[#FF69B4]/10 text-[#FF69B4]',
+    color: 'bg-gradient-to-br from-[#A848F0]/20 to-[#A848F0]/10 text-[#A848F0]',
     features: [
       'Generación de patrones',
       'Cálculo automático de tallas',
@@ -46,7 +46,7 @@ const modules: ModuleCardType[] = [
     description: 'Crea y personaliza avatares para tus diseños. Opciones predefinidas y completamente personalizables.',
     icon: <Palette className="w-8 h-8" />,
     href: '/avatares',
-    color: 'bg-gradient-to-br from-[#89004F]/20 to-[#89004F]/10 text-[#89004F]',
+    color: 'bg-gradient-to-br from-[#5C00CC]/20 to-[#5C00CC]/10 text-[#5C00CC]',
     features: [
       'Avatares prediseñados',
       'Personalización completa',
@@ -81,7 +81,7 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 px-4">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFA8D9]/10 to-[#89004F]/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00FFE2]/10 to-[#5C00CC]/10"></div>
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export default function Home() {
               className="mx-auto h-24 w-auto mb-8"
             />
             <h1 className="text-5xl font-bold text-primary-900 mb-6">
-              Diseña el Futuro de la <span className="bg-gradient-to-r from-[#FF69B4] to-[#89004F] bg-clip-text text-transparent">Moda</span>
+              Diseña el Futuro de la <span className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] bg-clip-text text-transparent">Moda</span>
             </h1>
             <p className="text-xl text-neutral-600 mb-8 max-w-3xl mx-auto">
               Bienvenido a Ajayu - Tu plataforma integral para el diseño de moda. 
@@ -108,7 +108,7 @@ export default function Home() {
                 variant="primary"
                 size="lg"
                 onClick={() => router.push('/cursos')}
-                className="min-w-[200px] bg-gradient-to-r from-[#FF69B4] to-[#89004F] hover:from-[#C33B80] hover:to-[#89004F] text-white border-0"
+                className="min-w-[200px] bg-gradient-to-r from-[#00FFE2] to-[#A848F0] hover:from-[#00E6CC] hover:to-[#9339D9] text-white border-0"
               >
                 Explorar Cursos
               </Button>
@@ -127,9 +127,9 @@ export default function Home() {
         </div>
         
         {/* Elementos decorativos */}
-        <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-[#FFA8D9]/20 to-[#FF69B4]/20 rounded-full opacity-60"></div>
-        <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-br from-[#FF69B4]/20 to-[#89004F]/20 rounded-full opacity-60"></div>
-        <div className="absolute top-1/2 right-20 w-16 h-16 bg-gradient-to-br from-[#FFA8D9]/10 to-[#89004F]/10 rounded-full opacity-60"></div>
+        <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-[#00FFE2]/20 to-[#A848F0]/20 rounded-full opacity-60"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-br from-[#A848F0]/20 to-[#5C00CC]/20 rounded-full opacity-60"></div>
+        <div className="absolute top-1/2 right-20 w-16 h-16 bg-gradient-to-br from-[#00FFE2]/10 to-[#5C00CC]/10 rounded-full opacity-60"></div>
       </section>
 
       {/* Features Section */}
@@ -230,7 +230,7 @@ export default function Home() {
                 variant="primary"
                 size="lg"
                 onClick={() => router.push('/cursos')}
-                className="min-w-[200px] bg-gradient-to-r from-[#FF69B4] to-[#89004F] hover:from-[#C33B80] hover:to-[#89004F] text-white border-0"
+                className="min-w-[200px] bg-gradient-to-r from-[#00FFE2] to-[#A848F0] hover:from-[#00E6CC] hover:to-[#9339D9] text-white border-0"
               >
                 Empezar Ahora
               </Button>

@@ -166,7 +166,7 @@ export default function CreateCourse() {
       <Layout>
         <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-2 border-[#FF69B4] border-t-transparent mx-auto"></div>
+            <div className="animate-spin rounded-full h-32 w-32 border-2 border-[#00FFE2] border-t-transparent mx-auto"></div>
             <p className="mt-4 text-neutral-600">Cargando...</p>
           </div>
         </div>
@@ -182,7 +182,7 @@ export default function CreateCourse() {
 
       <div className="min-h-screen bg-neutral-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#FF69B4]/10 to-[#C33B80]/10 py-16">
+        <section className="bg-gradient-to-r from-[#00FFE2]/10 to-[#A848F0]/10 py-16">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -194,16 +194,16 @@ export default function CreateCourse() {
                 <div className="flex items-center gap-4 mb-4">
                   <button
                     onClick={() => router.push('/dashboard')}
-                    className="p-2 rounded-lg bg-white/80 hover:bg-white text-[#C33B80] transition-all duration-300 shadow-sm"
+                    className="p-2 rounded-lg bg-white/80 hover:bg-white text-[#A848F0] transition-all duration-300 shadow-sm"
                   >
                     <ArrowLeft className="w-5 h-5" />
                   </button>
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-[#FF69B4] to-[#C33B80] flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-[#00FFE2] to-[#A848F0] flex items-center justify-center">
                     <BookOpen className="w-6 h-6 text-white" />
                   </div>
                 </div>
                 <h1 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-3">
-                  Crear <span className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] bg-clip-text text-transparent">Nuevo Curso</span>
+                  Crear <span className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] bg-clip-text text-transparent">Nuevo Curso</span>
                 </h1>
                 <p className="text-lg text-neutral-600 leading-relaxed">
                   Comparte tu conocimiento con el mundo. Crea un curso que inspire y transforme 
@@ -233,9 +233,9 @@ export default function CreateCourse() {
               className="max-w-4xl mx-auto"
             >
               <div className="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-[#FF69B4]/5 to-[#C33B80]/5 px-6 py-4 border-b border-neutral-200">
+                <div className="bg-gradient-to-r from-[#00FFE2]/5 to-[#A848F0]/5 px-6 py-4 border-b border-neutral-200">
                   <h2 className="text-xl font-semibold text-neutral-900 flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-[#FF69B4] to-[#C33B80] flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-[#00FFE2] to-[#A848F0] flex items-center justify-center">
                       <BookOpen className="w-4 h-4 text-white" />
                     </div>
                     Información del Curso
@@ -254,7 +254,7 @@ export default function CreateCourse() {
                   name="title"
                   value={formData.title}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C33B80] focus:border-[#C33B80] transition-all duration-300 ${
+                  className={`w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A848F0] focus:border-[#A848F0] transition-all duration-300 ${
                     errors.title ? 'border-red-300 bg-red-50' : 'border-neutral-300 hover:border-neutral-400'
                   }`}
                   placeholder="Ej: Fundamentos del Diseño de Moda"
@@ -284,7 +284,7 @@ export default function CreateCourse() {
                   rows={4}
                   value={formData.description}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C33B80] focus:border-[#C33B80] transition-all duration-300 resize-none ${
+                  className={`w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A848F0] focus:border-[#A848F0] transition-all duration-300 resize-none ${
                     errors.description ? 'border-red-300 bg-red-50' : 'border-neutral-300 hover:border-neutral-400'
                   }`}
                   placeholder="Describe qué aprenderán los estudiantes en este curso. Sé específico sobre los objetivos y beneficios..."
@@ -315,7 +315,7 @@ export default function CreateCourse() {
                       name="level"
                       value={formData.level}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C33B80] focus:border-[#C33B80] transition-all duration-300 appearance-none bg-white"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A848F0] focus:border-[#A848F0] transition-all duration-300 appearance-none bg-white"
                     >
                       {levels.map((level) => (
                         <option key={level.value} value={level.value}>
@@ -330,7 +330,7 @@ export default function CreateCourse() {
                     </div>
                   </div>
                   <div className="mt-2 flex items-center gap-1 text-sm text-neutral-600">
-                    <CheckCircle className="w-4 h-4 text-[#FF69B4]" />
+                    <CheckCircle className="w-4 h-4 text-[#00FFE2]" />
                     <p>{levels.find(l => l.value === formData.level)?.description}</p>
                   </div>
                 </div>
@@ -345,7 +345,7 @@ export default function CreateCourse() {
                       name="category"
                       value={formData.category}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C33B80] focus:border-[#C33B80] transition-all duration-300 appearance-none bg-white"
+                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A848F0] focus:border-[#A848F0] transition-all duration-300 appearance-none bg-white"
                     >
                       {categories.map((category) => (
                         <option key={category} value={category}>
@@ -380,7 +380,7 @@ export default function CreateCourse() {
                       onChange={handleInputChange}
                       min="0"
                       step="1000"
-                      className={`w-full pl-8 pr-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C33B80] focus:border-[#C33B80] transition-all duration-300 ${
+                      className={`w-full pl-8 pr-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A848F0] focus:border-[#A848F0] transition-all duration-300 ${
                         errors.price ? 'border-red-300 bg-red-50' : 'border-neutral-300 hover:border-neutral-400'
                       }`}
                       placeholder="0"
@@ -416,7 +416,7 @@ export default function CreateCourse() {
                       onChange={handleInputChange}
                       min="1"
                       max="1000"
-                      className={`w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C33B80] focus:border-[#C33B80] transition-all duration-300 ${
+                      className={`w-full px-4 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A848F0] focus:border-[#A848F0] transition-all duration-300 ${
                         errors.estimatedHours ? 'border-red-300 bg-red-50' : 'border-neutral-300 hover:border-neutral-400'
                       }`}
                       placeholder="10"
@@ -450,11 +450,11 @@ export default function CreateCourse() {
                   name="imageUrl"
                   value={formData.imageUrl}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#C33B80] focus:border-[#C33B80] transition-all duration-300"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#A848F0] focus:border-[#A848F0] transition-all duration-300"
                   placeholder="https://ejemplo.com/imagen-curso.jpg"
                 />
                 <div className="mt-2 flex items-center gap-2 text-sm text-neutral-500">
-                  <CheckCircle className="w-4 h-4 text-[#FF69B4]" />
+                  <CheckCircle className="w-4 h-4 text-[#00FFE2]" />
                   <p>Opcional. Si no proporcionas una imagen, se usará una por defecto.</p>
                 </div>
               </div>
@@ -484,7 +484,7 @@ export default function CreateCourse() {
                   className={`flex-1 sm:flex-none px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
                     saving
                       ? 'bg-neutral-400 cursor-not-allowed text-neutral-200'
-                      : 'bg-gradient-to-r from-[#FF69B4] to-[#C33B80] hover:shadow-lg hover:scale-105 text-white'
+                      : 'bg-gradient-to-r from-[#00FFE2] to-[#A848F0] hover:shadow-lg hover:scale-105 text-white'
                   }`}
                 >
                   {saving ? (

@@ -38,7 +38,7 @@ export default function Profile() {
         >
           <div className="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
             {/* Header del perfil */}
-            <div className="bg-gradient-to-r from-[#FF69B4] to-[#C33B80] px-6 py-8">
+            <div className="bg-gradient-to-r from-[#00FFE2] to-[#A848F0] px-6 py-8">
               <div className="flex items-center space-x-4">
                 <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                   <span className="text-2xl font-bold text-white">
