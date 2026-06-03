@@ -1,3 +1,4 @@
+import 'server-only';
 import { pool, executeQuery, executeQuerySingle } from './database';
 
 // ============================================================================
@@ -525,23 +526,12 @@ export async function getPendingReports(limit: number = 50): Promise<any[]> {
 
 // Obtener todos los reportes
 export async function getAllReports(status?: string): Promise<any[]> {
+  // FIX: removed JOINs on cr.post_id and cr.review_id (those columns don't exist in content_reports)
+  // FIX: removed INNER JOINs on social_profiles to avoid losing reports without profiles
   let sql = `
     SELECT 
-      cr.*,
-      reporter.username as reporter_username,
-      COALESCE(u_reporter.name, reporter.username) as reporter_name,
-      reported.username as reported_username,
-      COALESCE(u_reported.name, reported.username) as reported_name,
-      sp_post.content as post_content,
-      pr.comment as review_content,
-      pr.rating as review_rating
+      cr.*
     FROM content_reports cr
-    INNER JOIN social_profiles reporter ON cr.reporter_profile_id = reporter.id
-    LEFT JOIN users u_reporter ON reporter.user_id = u_reporter.id
-    INNER JOIN social_profiles reported ON cr.reported_profile_id = reported.id
-    LEFT JOIN users u_reported ON reported.user_id = u_reported.id
-    LEFT JOIN social_posts sp_post ON cr.post_id = sp_post.id
-    LEFT JOIN profile_reviews pr ON cr.review_id = pr.id
   `;
   
   const params: any[] = [];
@@ -679,27 +669,20 @@ export async function deleteProfileReview(reviewId: number, profileId: number, i
 
 // Obtener estadísticas de reportes
 export async function getReportsStats(): Promise<any> {
-  const sql = `
+  // FIX: removed report_type column (doesn't exist). Only use status column.
+  const result = await executeQuerySingle(`
     SELECT 
       COUNT(*) as total,
       COUNT(CASE WHEN status = 'pending' THEN 1 END) as pending,
       COUNT(CASE WHEN status = 'reviewed' THEN 1 END) as reviewed,
       COUNT(CASE WHEN status = 'resolved' THEN 1 END) as resolved,
-      COUNT(CASE WHEN status = 'dismissed' THEN 1 END) as dismissed,
-      COUNT(CASE WHEN report_type = 'post' THEN 1 END) as post_reports,
-      COUNT(CASE WHEN report_type = 'review' THEN 1 END) as review_reports,
-      COUNT(CASE WHEN report_type = 'profile' THEN 1 END) as profile_reports
+      COUNT(CASE WHEN status = 'dismissed' THEN 1 END) as dismissed
     FROM content_reports
-  `;
-  
-  return await executeQuerySingle(sql);
+  `);
+  return result || { total: 0, pending: 0, reviewed: 0, resolved: 0, dismissed: 0 };
 }
 
-// ============================================================================
-// FUNCIONES DE BÚSQUEDA
-// ============================================================================
 
-// Buscar perfiles
 export async function searchProfiles(query: string, currentProfileId: number = 0, limit: number = 20): Promise<any[]> {
   const sql = `
     SELECT 

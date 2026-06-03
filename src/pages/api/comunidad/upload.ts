@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       fs.mkdirSync(UPLOAD_DIR, { recursive: true });
     }
 
-    // Parsear el multipart form data manualmente
+    // Parsear el multipart form data
     const chunks: Buffer[] = [];
     
     for await (const chunk of req) {
@@ -38,23 +38,62 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     
     const buffer = Buffer.concat(chunks);
     
-    // Extraer el archivo del body (simplificado - en producción usar multer o similar)
-    // Por ahora retornamos un mock de URL
-    const timestamp = Date.now();
-    const randomStr = Math.random().toString(36).substring(7);
-    const filename = `post_${timestamp}_${randomStr}.jpg`;
-    const relativePath = `/uploads/comunidad/${filename}`;
+    // Extraer content-type para verificar el tipo de imagen
+    const contentType = req.headers['content-type'] || '';
     
-    // En un entorno real, guardaríamos el archivo:
-    // fs.writeFileSync(path.join(UPLOAD_DIR, filename), buffer);
+    // Verificar tipo de archivo
+    if (contentType.includes('multipart/form-data')) {
+      // Intentar parsear el multipart
+      const boundary = contentType.split('boundary=')[1];
+      if (boundary) {
+        const parts = buffer.toString('binary').split(`--${boundary}`);
+        
+        for (const part of parts) {
+          if (part.includes('Content-Type:') && part.includes('image/')) {
+            // Extraer el nombre del archivo
+            const filenameMatch = part.match(/filename="(.+)"/);
+            if (filenameMatch) {
+              const originalFilename = filenameMatch[1];
+              const ext = path.extname(originalFilename);
+              const timestamp = Date.now();
+              const randomStr = Math.random().toString(36).substring(2, 8);
+              const filename = `img_${timestamp}_${randomStr}${ext}`;
+              
+              // Extraer los datos de la imagen (después de los headers)
+              const headerEnd = part.indexOf('\r\n\r\n') + 4;
+              const imageData = part.substring(headerEnd);
+              
+              // Convertir a buffer (quitar el último \r\n-- si existe)
+              const cleanData = imageData.replace(/\r\n--$/, '');
+              
+              try {
+                // Guardar el archivo
+                const filepath = path.join(UPLOAD_DIR, filename);
+                fs.writeFileSync(filepath, Buffer.from(cleanData, 'binary'));
+                
+                const relativePath = `/uploads/comunidad/${filename}`;
+                
+                return res.status(200).json({
+                  success: true,
+                  url: relativePath,
+                  filename: filename,
+                  originalName: originalFilename,
+                  message: 'Imagen subida exitosamente'
+                });
+              } catch (writeError) {
+                console.error('Error guardando archivo:', writeError);
+              }
+            }
+          }
+        }
+      }
+    }
     
-    // Retornar la URL del archivo
-    return res.status(200).json({
-      success: true,
-      url: relativePath,
-      filename: filename,
-      message: 'Imagen subida exitosamente (simulado)'
+    // Si no se pudo parsear multipart, retornar error
+    return res.status(400).json({ 
+      error: 'No se pudo procesar la imagen. Asegúrate de enviar un archivo de imagen válido.' 
     });
+    
   } catch (error: any) {
     console.error('Error subiendo imagen:', error);
     return res.status(500).json({ error: error.message || 'Error al subir imagen' });

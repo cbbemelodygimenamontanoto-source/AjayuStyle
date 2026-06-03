@@ -1,3 +1,4 @@
+import 'server-only';
 import mysql from 'mysql2/promise';
 import { User, UserWithRoles, UserRole } from '@/types';
 
