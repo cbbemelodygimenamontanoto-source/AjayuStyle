@@ -23,16 +23,30 @@ public class UsuariosStepDefinitions {
     public void queLaApiEstaDisponible(String url) {
         RestAssured.baseURI = url;
     }
-
-    @Cuando("envío una solicitud POST a {string} con los datos:")
-    public void envioSolicitudPostConDatos(String endpoint, io.cucumber.datatable.DataTable dataTable) {
-        var data = dataTable.asMap(String.class, String.class);
-        CommonStepDefinitions.sharedResponse = SerenityRest.given()
-                .contentType("application/json")
-                .body(data)
-                .when()
-                .post(API_PATH + endpoint);
+@Cuando("envío una solicitud POST a {string} con los datos:")
+public void envioSolicitudPostConDatos(String endpoint, io.cucumber.datatable.DataTable dataTable) {
+    // Convierte la tabla de 2 columnas (campo|valor) a un Map
+    java.util.Map<String, String> data = new java.util.HashMap<>();
+    java.util.List<java.util.List<String>> rows = dataTable.asLists(String.class);
+    
+    // Si la primera fila es encabezado ("campo", "valor"), saltarla
+    int startRow = 0;
+    if (rows.get(0).get(0).equalsIgnoreCase("campo") || 
+        rows.get(0).get(0).equalsIgnoreCase("field") ||
+        rows.get(0).get(0).equalsIgnoreCase("key")) {
+        startRow = 1;
     }
+    
+    for (int i = startRow; i < rows.size(); i++) {
+        data.put(rows.get(i).get(0), rows.get(i).get(1));
+    }
+    
+    CommonStepDefinitions.sharedResponse = SerenityRest.given()
+            .contentType("application/json")
+            .body(data)
+            .when()
+            .post(API_PATH + endpoint);
+}
 
     @Entonces("el token debe tener formato JWT válido")
     public void elTokenDebeTenerFormatoJWT() {
