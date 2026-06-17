@@ -36,15 +36,6 @@ public class CursosStepDefinitions {
                 .get(API_PATH + endpoint);
     }
 
-    @Cuando("envío una solicitud POST a {string} con:")
-    public void envioPostConBody(String endpoint, String body) {
-        response = SerenityRest.given()
-                .header("Authorization", "Bearer " + authToken)
-                .contentType("application/json")
-                .body(body)
-                .when()
-                .post(API_PATH + endpoint);
-    }
 
     @Cuando("envío una solicitud PUT a {string} con:")
     public void envioPutConBody(String endpoint, String body) {
@@ -64,17 +55,7 @@ public class CursosStepDefinitions {
                 .delete(API_PATH + endpoint);
     }
 
-    @Entonces("el código de respuesta debe ser {int}")
-    public void elCodigoDebeSer(int code) {
-        assertThat(response.getStatusCode(), equalTo(code));
-    }
 
-    @Entonces("el código de respuesta debe ser {int} o {int}")
-    public void elCodigoDebeSerUnoDe(int code1, int code2) {
-        int actual = response.getStatusCode();
-        assertTrue(actual == code1 || actual == code2,
-            "Se esperaba " + code1 + " o " + code2 + " pero fue " + actual);
-    }
 
     @Entonces("la respuesta debe ser una lista")
     public void laRespuestaDebeSerUnaLista() {
@@ -96,10 +77,6 @@ public class CursosStepDefinitions {
         createdCourseId = id;
     }
 
-    @Entonces("la respuesta debe contener el campo {string}")
-    public void laRespuestaContiene(String field) {
-        assertThat(response.jsonPath().get(field), notNullValue());
-    }
 
     @Entonces("la respuesta debe ser una lista de lecciones")
     public void laRespuestaEsListaLecciones() {
@@ -121,22 +98,7 @@ public class CursosStepDefinitions {
         assertThat(id, notNullValue());
     }
 
-    @Entonces("la respuesta debe contener un mensaje de éxito")
-    public void laRespuestaContieneMensajeExito() {
-        String body = response.getBody().asString().toLowerCase();
-        assertTrue(body.contains("éxito") || body.contains("exito") ||
-                body.contains("success") || body.contains("eliminad") ||
-                body.contains("actualizad") || body.contains("ocultad"),
-            "La respuesta debe contener un mensaje de éxito. Body: " + body);
-    }
 
-    @Entonces("la respuesta debe contener un mensaje de error")
-    public void laRespuestaContieneMensajeError() {
-        String body = response.getBody().asString().toLowerCase();
-        assertTrue(body.contains("error") || body.contains("requerid") ||
-                body.contains("inválid") || body.contains("invalid"),
-            "La respuesta debe contener un mensaje de error. Body: " + body);
-    }
 
     @Dado("que tengo un curso creado con id {string}")
     public void queTengoCursoCreado(String idStr) {
