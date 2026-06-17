@@ -41,10 +41,7 @@ public class ComunidadStepDefinitions {
                 .post(API_PATH + endpoint);
     }
 
-    @Entonces("el código de respuesta debe ser {int}")
-    public void elCodigoEs(int code) {
-        assertThat(response.getStatusCode(), equalTo(code));
-    }
+
 
     @Entonces("el código de respuesta debe ser {int} o {int}")
     public void elCodigoEsUnoDe(int code1, int code2) {
