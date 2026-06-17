@@ -14,7 +14,7 @@ public class CursosStepDefinitions {
 
     @Dado("que soy un usuario administrador")
     public void queSoyAdministrador() {
-        CommonStepDefinitions.sharedAuthToken = System.getenv().getOrDefault("ADMIN_TOKEN", "admin_test_token");
+        CommonStepDefinitions.sharedAuthToken = System.getenv().getOrDefault("admin123", "miguel_admin");
     }
 
     @Cuando("envío una solicitud GET a {string} sin autenticación")
