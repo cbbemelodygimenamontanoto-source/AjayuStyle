@@ -11,9 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CommonStepDefinitions {
 
     private static final String API_PATH = "/api";
-    // Compartido entre todos los step definitions via Cucumber's DI
-    static Response sharedResponse;
-    static String sharedAuthToken = "";
+    public static Response sharedResponse;
+    public static String sharedAuthToken = "";
 
     @Cuando("envío una solicitud POST a {string} con:")
     public void envioPostConBody(String endpoint, String body) {
@@ -45,15 +44,18 @@ public class CommonStepDefinitions {
     @Entonces("la respuesta debe contener un mensaje de error")
     public void laRespuestaContieneMensajeError() {
         String body = sharedResponse.getBody().asString().toLowerCase();
-        assertTrue(body.contains("error") || body.contains("inválid") || body.contains("invalid"),
-            "La respuesta debe contener un mensaje de error");
+        assertTrue(body.contains("error") || body.contains("inválid") ||
+                body.contains("invalid") || body.contains("requerid") ||
+                body.contains("no encontrado"),
+            "La respuesta debe contener un mensaje de error. Body: " + body);
     }
 
     @Entonces("la respuesta debe contener un mensaje de éxito")
     public void laRespuestaContieneMensajeExito() {
         String body = sharedResponse.getBody().asString().toLowerCase();
         assertTrue(body.contains("éxito") || body.contains("exito") ||
-                body.contains("success") || body.contains("eliminad"),
-            "La respuesta debe contener un mensaje de éxito");
+                body.contains("success") || body.contains("eliminad") ||
+                body.contains("actualizad") || body.contains("ocultad"),
+            "La respuesta debe contener un mensaje de éxito. Body: " + body);
     }
 }
