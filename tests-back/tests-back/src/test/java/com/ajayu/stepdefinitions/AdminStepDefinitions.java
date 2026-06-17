@@ -10,15 +10,23 @@ public class AdminStepDefinitions {
     private static final String API_PATH = "/api";
     private String adminToken;
 
-    @Dado("que tengo un token de administrador válido")
-    public void queTengoTokenAdmin() {
-        adminToken = System.getenv().getOrDefault("ADMIN_TOKEN", "admin_test_token");
-        CommonStepDefinitions.sharedAuthToken = adminToken;
-    }
+@Dado("que tengo un token de administrador válido")
+public void queTengoTokenAdmin() {
+    // Hacer login para obtener un token real
+    io.restassured.response.Response loginResponse = io.restassured.RestAssured.given()
+        .contentType("application/json")
+        .body("{\"email\":\"admin.sistema@gmail.com\",\"password\":\"admin123\"}")
+        .post("/api/auth/login");
+    
+    String token = loginResponse.jsonPath().getString("token");
+    if (token == null) token = loginResponse.jsonPath().getString("data.token");
+    
+    CommonStepDefinitions.sharedAuthToken = token != null ? token : "invalid";
+}
 
     @Dado("que tengo un token de un usuario sin rol de administrador")
     public void queTengoTokenUsuarioNormal() {
-        CommonStepDefinitions.sharedAuthToken = System.getenv().getOrDefault("TEST_TOKEN", "user_test_token");
+        CommonStepDefinitions.sharedAuthToken = System.getenv().getOrDefault("instructor123", "carlos_instructor");
     }
 
     @Cuando("envío una solicitud GET a {string} con autenticación")
