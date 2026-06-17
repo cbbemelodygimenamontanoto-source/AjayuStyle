@@ -31,16 +31,6 @@ public class ComunidadStepDefinitions {
                 .get(API_PATH + endpoint);
     }
 
-    @Cuando("envío una solicitud POST a {string} con:")
-    public void envioPost(String endpoint, String body) {
-        response = SerenityRest.given()
-                .header("Authorization", "Bearer " + authToken)
-                .contentType("application/json")
-                .body(body)
-                .when()
-                .post(API_PATH + endpoint);
-    }
-
 
 
     @Entonces("el código de respuesta debe ser {int} o {int}")
@@ -56,10 +46,7 @@ public class ComunidadStepDefinitions {
             "La respuesta debe tener formato de feed de posts");
     }
 
-    @Entonces("la respuesta debe contener el campo {string}")
-    public void laRespuestaContiene(String field) {
-        assertThat(response.jsonPath().get(field), notNullValue());
-    }
+
 
     @Entonces("la respuesta debe contener información del perfil")
     public void laRespuestaContienePerfil() {
