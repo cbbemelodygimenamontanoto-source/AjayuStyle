@@ -44,21 +44,7 @@ public class AdminStepDefinitions {
                 .get(API_PATH + endpoint);
     }
 
-    @Cuando("envío una solicitud POST a {string} con:")
-    public void envioPostConBody(String endpoint, String body) {
-        response = SerenityRest.given()
-                .header("Authorization", "Bearer " + adminToken)
-                .contentType("application/json")
-                .body(body)
-                .when()
-                .post(API_PATH + endpoint);
-    }
 
-
-    @Entonces("la respuesta debe contener el campo {string}")
-    public void laRespuestaContiene(String field) {
-        assertThat(response.jsonPath().get(field), notNullValue());
-    }
 
     @Entonces("debe ser una lista de usuarios")
     public void debeSerListaUsuarios() {
@@ -77,11 +63,4 @@ public class AdminStepDefinitions {
         // Para los tests asumimos que el post existe o se creará en el setup
     }
 
-    @Entonces("la respuesta debe contener un mensaje de éxito")
-    public void laRespuestaContieneExito() {
-        String body = response.getBody().asString().toLowerCase();
-        assertTrue(body.contains("éxito") || body.contains("exito") || body.contains("success") ||
-                body.contains("eliminad") || body.contains("actualizad") || body.contains("ocultad"),
-            "La respuesta debe contener un mensaje de éxito");
-    }
 }
