@@ -11,7 +11,7 @@ public class ComunidadStepDefinitions {
 
     @Dado("que tengo un token de autenticación válido")
     public void queTengoTokenValido() {
-        CommonStepDefinitions.sharedAuthToken = System.getenv().getOrDefault("TEST_TOKEN", "test_token");
+        CommonStepDefinitions.sharedAuthToken = System.getenv().getOrDefault("password123", "ana_garcia");
     }
 
     @Cuando("envío una solicitud GET a {string}")
