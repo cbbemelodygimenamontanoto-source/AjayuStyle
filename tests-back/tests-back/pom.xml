@@ -161,7 +161,18 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
             </plugin>
-
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.2.5</version>
+    <configuration>
+        <argLine>
+            --add-opens java.base/java.lang=ALL-UNNAMED
+            --add-opens java.base/java.util=ALL-UNNAMED
+            --add-opens java.base/java.io=ALL-UNNAMED
+        </argLine>
+    </configuration>
+</plugin>
             <!-- Serenity Maven Plugin (genera los reportes) -->
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
