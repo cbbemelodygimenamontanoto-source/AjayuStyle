@@ -32,29 +32,7 @@ public class UsuariosStepDefinitions {
         RestAssured.baseURI = url;
     }
 
-    @Cuando("envío una solicitud POST a {string} con los datos:")
-    public void envioSolicitudPostConDatos(String endpoint, io.cucumber.datatable.DataTable dataTable) {
-        var data = dataTable.asMap(String.class, String.class);
-        response = SerenityRest.given()
-                .contentType("application/json")
-                .body(data)
-                .when()
-                .post(API_PATH + endpoint);
-    }
 
-    @Cuando("envío una solicitud POST a {string} con:")
-    public void envioSolicitudPostCon(String endpoint, String body) {
-        response = SerenityRest.given()
-                .contentType("application/json")
-                .body(body)
-                .when()
-                .post(API_PATH + endpoint);
-    }
-
-    @Entonces("el código de respuesta debe ser {int}")
-    public void elCodigoDeRespuestaDebeSer(int statusCode) {
-        assertThat(response.getStatusCode(), equalTo(statusCode));
-    }
 
     @Entonces("el código de respuesta debe ser {int} o {int}")
     public void elCodigoDeRespuestaDebeSerOpciones(int code1, int code2) {
@@ -66,13 +44,6 @@ public class UsuariosStepDefinitions {
     @Entonces("la respuesta debe contener el campo {string}")
     public void laRespuestaDebeContenerCampo(String field) {
         assertThat(response.jsonPath().get(field), notNullValue());
-    }
-
-    @Entonces("la respuesta debe contener un mensaje de error")
-    public void laRespuestaDebeContenerMensajeDeError() {
-        String body = response.getBody().asString();
-        assertThat(body.toLowerCase(), anyOf(containsString("error"), containsString("inválid"),
-                containsString("requerido"), containsString("no encontrado")));
     }
 
     @Entonces("el token debe tener formato JWT válido")
