@@ -54,10 +54,6 @@ public class AdminStepDefinitions {
                 .post(API_PATH + endpoint);
     }
 
-    @Entonces("el código de respuesta debe ser {int}")
-    public void elCodigoEs(int code) {
-        assertThat(response.getStatusCode(), equalTo(code));
-    }
 
     @Entonces("la respuesta debe contener el campo {string}")
     public void laRespuestaContiene(String field) {
